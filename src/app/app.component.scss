@@ -1,0 +1,11 @@
+::ng-deep {
+    .router-outlet-container {
+        border: 2px solid red;
+        padding: 15px;
+    }
+
+    .child-comp-container {
+        border: 2px solid blue;
+        padding: 15px;
+    }
+}
