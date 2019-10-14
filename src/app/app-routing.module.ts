@@ -6,7 +6,7 @@ import { PAGES_ROUTES } from './pages/pages-routing.module';
 const routes: Routes = [
   {
     path: 'pages',
-    component: PagesComponent, 
+    component: PagesComponent,
     children: PAGES_ROUTES
   },
   { path: '', redirectTo: 'pages', pathMatch: 'full' },

@@ -3,16 +3,18 @@ import { CommonModule } from '@angular/common';
 
 import { PagesRoutingModule } from './pages-routing.module';
 import { PagesComponent } from './pages.component';
-import { HomeComponent } from './home/home.component';
-import { TodosComponent } from './todos/todos.component';
-import { ChildComponent } from './child/child.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AllItemsComponent } from './all-items/all-items.component';
+import { SettingsComponent } from './settings/settings.component';
+import {CompLibModule} from '../comp-lib/comp-lib.module';
 
 
 @NgModule({
-  declarations: [PagesComponent, HomeComponent, TodosComponent, ChildComponent],
+  declarations: [PagesComponent, DashboardComponent, AllItemsComponent, SettingsComponent],
   imports: [
     CommonModule,
-    PagesRoutingModule
+    PagesRoutingModule,
+    CompLibModule
   ]
 })
 export class PagesModule { }
