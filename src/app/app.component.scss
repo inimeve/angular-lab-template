@@ -1,11 +1,28 @@
-::ng-deep {
-    .router-outlet-container {
-        border: 2px solid red;
-        padding: 15px;
-    }
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
 
-    .child-comp-container {
-        border: 2px solid blue;
-        padding: 15px;
-    }
+.layout-container {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+.sidebar-container {
+    width: 200px;
+}
+
+.view-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.router-outlet-container {
+    border: 2px solid red;
+    padding: 15px;
+    flex: 1;
+    margin: 10px;
 }
