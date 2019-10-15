@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  avatarUrl: string = 'assets/avatar-set/';
+
+  constructor() {
+    this.avatarUrl = this.avatarUrl.concat(Math.round(Math.random() * 8 + 1).toString() + '.png');
+  }
 
   ngOnInit() {
   }
