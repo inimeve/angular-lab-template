@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, HostBinding } from '@angular/core';
+import { SidebarService } from './sidebar.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  shrink: boolean;
+
+  @HostBinding('class.shrink')
+  get isShrink() {
+    return this.shrink;
+  }
+
+  constructor(private element: ElementRef, private sidebarService: SidebarService) { }
 
   ngOnInit() {
+    this.sidebarService.onToggle()
+      .subscribe((data: {expanded: boolean}) => {
+        this.toggle();
+      });
+  }
+
+  public toggle() {
+    this.shrink = !this.shrink;
   }
 
 }
