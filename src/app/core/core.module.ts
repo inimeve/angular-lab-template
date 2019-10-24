@@ -6,9 +6,10 @@ import { FooterComponent } from './footer/footer.component';
 import {RouterModule} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import { SidebarService } from './sidebar/sidebar.service';
+import { SidebarItemComponent } from './sidebar/sidebar-item/sidebar-item.component';
 
 @NgModule({
-  declarations: [HeaderComponent, SidebarComponent, FooterComponent],
+  declarations: [HeaderComponent, SidebarComponent, FooterComponent, SidebarItemComponent],
   imports: [
     CommonModule,
     RouterModule,

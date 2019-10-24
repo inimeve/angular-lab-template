@@ -1,36 +1,11 @@
 <div class="sidebar">
 
-    <div class="sidebar__item" routerLink="pages/dashboard">
-        <div class="sidebar__item__icon">
-            <i class="fab fa-angular fa-lg"></i>
-        </div>
-        <div class="sidebar__item__name">
-            Dashboard
-        </div>
-    </div>
+    <app-sidebar-item label="Dashboard" icon="fab fa-angular fa-lg" routerLink="pages/dashboard"></app-sidebar-item>
 
-    <div class="sidebar__item" routerLink="pages/allItems">
-        <div class="sidebar__item__icon">
-            <i class="fas fa-helicopter fa-lg"></i>
-        </div>
-        <div class="sidebar__item__name">
-            All items
-        </div>
-    </div>
+    <app-sidebar-item label="All items" icon="fas fa-helicopter fa-lg" routerLink="pages/allItems"></app-sidebar-item>
 
-    <div class="sidebar__item" routerLink="pages/settings">
-        <div class="sidebar__item__icon">
-            <i class="fas fa-sliders-h fa-lg"></i>
-        </div>
-        <div class="sidebar__item__name">
-            Settings
-        </div>
-    </div>
+    <app-sidebar-item label="Settings" icon="fas fa-sliders-h fa-lg" routerLink="pages/settings"></app-sidebar-item>
 
-    <div class="sidebar__item" routerLink="">
-        <div class="sidebar__item__name">
-            Logout
-        </div>
-    </div>
+    <app-sidebar-item label="Logout" icon="" routerLink=""></app-sidebar-item>
 
 </div>
