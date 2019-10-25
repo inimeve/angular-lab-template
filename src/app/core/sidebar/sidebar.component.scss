@@ -3,22 +3,44 @@
 :host {
   display: flex;
   flex-direction: column;
-  // flex: 0 0 200px;
+
+  overflow: hidden;
   box-shadow: 0.5rem 0 1rem 0 rgba(44,51,73,.1);
-  // overflow: hidden;
-  // height: 100%;
-  // transition: all 1s;
+
+  transition: flex $transition-time;
   
   &.compacted {
-    // overflow: hidden;
-    // flex: 0 0 50px;
-    // transition: all 1s;
-
-    // ::ng-deep .sidebar__item {
-    //   color: red;
-    // }
+    flex: 0 0 50px;
+    
+    ::ng-deep .sidebar__item .sidebar__item__icon{
+      transition: font-size $transition-time;
+      font-size: 0.8rem;
+    }
   }
 
+  &.expanded {
+    flex: 0 0 $sidebar-expanded-with;
 
+    ::ng-deep .sidebar__item .sidebar__item__icon{
+      transition: font-size $transition-time;
+      font-size: 1rem;
+    }
+  }
 }
 
+@media only screen and (max-width: 768px) {
+  :host {
+    position: fixed;
+    width: $sidebar-expanded-with;
+    height: 100%;
+    z-index: 1000;
+  
+    background: white;
+
+    transition: width $transition-time;
+
+    &.compacted {
+      width: 0;
+    }
+  }
+}

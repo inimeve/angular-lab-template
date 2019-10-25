@@ -1,6 +1,11 @@
 import { Component, OnInit, ElementRef, HostBinding } from '@angular/core';
 import { SidebarService } from './sidebar.service';
 
+export enum SidebarState {
+  STATE_EXPANDED = 'expanded',
+  STATE_COMPACTED = 'compacted'
+}
+
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -8,29 +13,30 @@ import { SidebarService } from './sidebar.service';
 })
 export class SidebarComponent implements OnInit {
 
-  compacted: boolean = true;
+  state: SidebarState;
 
   @HostBinding('class.compacted')
-  get isCompact() {
-    return this.compacted;
+  get compacted() {
+    return this.state === SidebarState.STATE_COMPACTED;
   }
 
   @HostBinding('class.expanded')
-  get isExpanded() {
-    return !this.compacted;
+  get expanded() {
+    return this.state === SidebarState.STATE_EXPANDED;
   }
 
-  constructor(private element: ElementRef, private sidebarService: SidebarService) { }
+  constructor(private sidebarService: SidebarService) {
+  }
 
   ngOnInit() {
-    this.sidebarService.onToggle()
-      .subscribe((data: {expanded: boolean}) => {
-        this.toggle();
+    this.sidebarService.onStateChanged()
+      .subscribe((data: SidebarState) => {
+        this.setState(data);
       });
   }
 
-  public toggle() {
-    this.compacted = !this.compacted;
+  public setState(state: SidebarState) {
+    this.state = state;
   }
 
 }
