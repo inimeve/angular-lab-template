@@ -8,11 +8,16 @@ import { SidebarService } from './sidebar.service';
 })
 export class SidebarComponent implements OnInit {
 
-  shrink: boolean;
+  compacted: boolean = true;
 
-  @HostBinding('class.shrink')
-  get isShrink() {
-    return this.shrink;
+  @HostBinding('class.compacted')
+  get isCompact() {
+    return this.compacted;
+  }
+
+  @HostBinding('class.expanded')
+  get isExpanded() {
+    return !this.compacted;
   }
 
   constructor(private element: ElementRef, private sidebarService: SidebarService) { }
@@ -25,7 +30,7 @@ export class SidebarComponent implements OnInit {
   }
 
   public toggle() {
-    this.shrink = !this.shrink;
+    this.compacted = !this.compacted;
   }
 
 }

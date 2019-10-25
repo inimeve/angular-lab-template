@@ -2,26 +2,23 @@
 
 .sidebar__item {
     display: flex;
-    width: 200px;
-    padding: 15px;
+
+    height: 50px;
 
     border-bottom: 1px solid lightgray;
+    color: $item-text-color;
+
     cursor: pointer;
     text-decoration: none;
-
-    color: $item-text-color;
     outline: 0 solid transparent;
 
     &__icon {
-        width: 25px;
-        margin-right: 15px;
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
         align-items: center;
-    }
 
-    &__name {
-        user-select: none;
+        width: 25px;
+        // margin: 0 8px 0 0;
     }
 
     &:hover {
@@ -30,4 +27,43 @@
     &:active {
         text-shadow: 0px 0px 2px lighten($item-text-color, 40%);
     }
+}
+
+@mixin expanded-sidebar-item() {
+    .sidebar__item {
+        padding: 0 40px 0 15px;
+    
+        &__icon {
+            margin: 0 8px 0 0;
+        }
+
+        &__name {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            margin: 0 0 0 8px;
+
+            user-select: none;
+        }
+    }
+}
+
+@mixin compacted-sidebar-item() {
+    .sidebar__item {
+        padding: 0 15px 0 15px;
+
+        &__name {
+            display: none;
+        }
+    }
+}
+
+
+:host-context(.expanded) {
+    @include expanded-sidebar-item();
+}
+
+:host-context(.compacted) {
+    @include compacted-sidebar-item();
 }

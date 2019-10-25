@@ -1,22 +1,24 @@
 @import "./sidebar.component.config.scss";
 
 :host {
-  overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  // flex: 0 0 200px;
   box-shadow: 0.5rem 0 1rem 0 rgba(44,51,73,.1);
-  transition: all 1s;
-  flex: 0 0 200px;
+  // overflow: hidden;
+  // height: 100%;
+  // transition: all 1s;
   
-  &.shrink {
-    overflow: hidden;
-    flex: 0;
-    transition: all 1s;
+  &.compacted {
+    // overflow: hidden;
+    // flex: 0 0 50px;
+    // transition: all 1s;
+
+    // ::ng-deep .sidebar__item {
+    //   color: red;
+    // }
   }
 
+
 }
-
-
-
 
