@@ -1,6 +1,6 @@
-import { Component, OnInit, ElementRef, HostBinding } from '@angular/core';
-import { SidebarService } from './sidebar.service';
-import { SidebarState } from './sidebar.component.model';
+import {Component, HostBinding, OnInit} from '@angular/core';
+import {SidebarService} from './sidebar.service';
+import {SidebarState} from './sidebar.component.model';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,7 +9,7 @@ import { SidebarState } from './sidebar.component.model';
 })
 export class SidebarComponent implements OnInit {
 
-  state: SidebarState;
+  state: SidebarState = SidebarState.STATE_COMPACTED;
 
   @HostBinding('class.compacted')
   get compacted() {
