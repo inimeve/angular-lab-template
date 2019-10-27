@@ -8,23 +8,34 @@ import { HeaderComponent } from './components/header/header.component';
 import { SidebarItemComponent } from './components/sidebar/sidebar-item/sidebar-item.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { SidebarService } from './components/sidebar/sidebar.service';
+import { FluidLayoutComponent } from './layouts/fluid-layout/fluid-layout.component';
+import { ColumnLayoutComponent } from './layouts/column-layout/column-layout.component';
+
+const COMPONENTS = [
+  HeaderComponent,
+  SidebarComponent,
+  SidebarItemComponent,
+  FooterComponent,
+  FluidLayoutComponent,
+  ColumnLayoutComponent,
+];
 
 @NgModule({
-  declarations: [HeaderComponent, SidebarComponent, FooterComponent, SidebarItemComponent],
+  declarations: [...COMPONENTS],
   imports: [
     CommonModule,
     RouterModule,
     HttpClientModule
   ],
-  exports: [HeaderComponent, SidebarComponent, FooterComponent]
+  exports: [...COMPONENTS]
 })
 export class CoreModule {
   static forRoot(): ModuleWithProviders {
-    return <ModuleWithProviders> {
+    return {
       ngModule: CoreModule,
       providers: [
         SidebarService
       ]
-    }
+    } as ModuleWithProviders;
   }
 }

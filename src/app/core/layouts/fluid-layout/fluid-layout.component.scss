@@ -1,0 +1,28 @@
+:host {
+  display: flex;
+  flex-direction: column;
+
+  height: 100vh;
+}
+
+.layout-container {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+
+  overflow: hidden;
+}
+
+.view-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  overflow: auto;
+}
+
+.router-outlet-container {
+  flex: 1;
+
+  margin: 10px;
+}

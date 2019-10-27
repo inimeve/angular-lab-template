@@ -3,10 +3,10 @@
 :host {
   &.active {
     .sidebar__item {
-      background: rgba( $primary-color, .1 );
+      background: rgba( $item-highlight-color, .1 );
 
       &__icon {
-        border-left: 5px solid $primary-color;
+        border-left: 5px solid $item-highlight-color;
         padding-left: 4px;
       }
     }

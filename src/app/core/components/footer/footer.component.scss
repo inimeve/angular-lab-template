@@ -1,31 +1,45 @@
+@import "footer.component.config.scss";
+
 :host {
   display: flex;
-  height: 40px;
+  flex-direction: row;
+  flex: 0 0 40px;
+}
 
-  align-items: center;
+.footer {
+  display: flex;
   justify-content: space-between;
+  align-items: center;
+  flex: 1;
+
+  padding: 0 10px;
 
   background: ghostwhite;
   box-shadow: 0 -0.5rem 1rem 0 rgba(44,51,73,.1);
-  padding: 0 10px;
-}
 
-.name-container {
-  display: flex;
-  flex-direction: row;
+  &__name {
+    display: flex;
 
-  font-weight: bold;
+    margin: 0 0 0 5px;
 
-  i {
-    margin-left: 5px;
-    align-self: center;
-    position: relative;
-    top: 1px;
+    font-weight: bold;
+
+    i {
+      position: relative;
+      top: 4px;
+
+      margin: 0 0 0 5px;
+
+      color: $footer-highlight-color;
+    }
   }
-}
 
-.social-container {
-  i {
-    margin: 0 5px;
+  &__social {
+    display: flex;
+
+    i {
+      margin: 0 5px 0 0;
+    }
   }
+
 }

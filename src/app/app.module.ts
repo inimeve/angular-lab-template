@@ -15,7 +15,7 @@ import {CompLibModule} from './comp-lib/comp-lib.module';
     BrowserModule,
     AppRoutingModule,
     PagesModule,
-    CoreModule,
+    CoreModule.forRoot(),
     CompLibModule,
   ],
   providers: [],
