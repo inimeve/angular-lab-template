@@ -19,7 +19,7 @@
   }
 
   &.expanded {
-    flex: 0 0 $sidebar-expanded-with;
+    flex: 0 0 $sidebar-expanded-width;
 
     ::ng-deep .sidebar__item .sidebar__item__icon{
       transition: font-size $transition-time;
@@ -28,10 +28,10 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 640px) {
   :host {
     position: fixed;
-    width: $sidebar-expanded-with;
+    width: $sidebar-expanded-width;
     height: 100%;
     z-index: 1000;
   

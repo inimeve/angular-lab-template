@@ -1,12 +1,13 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './header/header.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { FooterComponent } from './footer/footer.component';
-import {RouterModule} from '@angular/router';
-import {HttpClientModule} from '@angular/common/http';
-import { SidebarService } from './sidebar/sidebar.service';
-import { SidebarItemComponent } from './sidebar/sidebar-item/sidebar-item.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { SidebarItemComponent } from './components/sidebar/sidebar-item/sidebar-item.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { SidebarService } from './components/sidebar/sidebar.service';
 
 @NgModule({
   declarations: [HeaderComponent, SidebarComponent, FooterComponent, SidebarItemComponent],

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Subject, Observable, BehaviorSubject } from 'rxjs';
-import { SidebarComponent, SidebarState } from './sidebar.component';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { SidebarState } from './sidebar.component.model';
 
 @Injectable({
   providedIn: 'root'

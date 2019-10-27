@@ -1,10 +1,6 @@
 import { Component, OnInit, ElementRef, HostBinding } from '@angular/core';
 import { SidebarService } from './sidebar.service';
-
-export enum SidebarState {
-  STATE_EXPANDED = 'expanded',
-  STATE_COMPACTED = 'compacted'
-}
+import { SidebarState } from './sidebar.component.model';
 
 @Component({
   selector: 'app-sidebar',

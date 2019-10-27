@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostBinding } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar-item',
@@ -16,7 +17,12 @@ export class SidebarItemComponent implements OnInit {
   @Input()
   label: string;
 
-  constructor() { }
+  @HostBinding('class.active')
+  get active() {
+    return this.routerLink ? this.router.url.includes(this.routerLink) : false;
+  }
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
