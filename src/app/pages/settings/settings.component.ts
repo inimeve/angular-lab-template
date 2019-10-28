@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ConfigService} from '../../core/config/config.service';
 
 @Component({
   selector: 'app-settings',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingsComponent implements OnInit {
 
-  constructor() { }
+  config: any;
+
+  constructor(private configService: ConfigService) { }
 
   ngOnInit() {
+    this.config = this.configService.getConfig();
   }
 
 }
