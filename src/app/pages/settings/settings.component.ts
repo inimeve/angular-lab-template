@@ -17,8 +17,4 @@ export class SettingsComponent implements OnInit {
     this.config = this.configService.getConfig();
   }
 
-  logout() {
-    this.authService.logout();
-  }
-
 }

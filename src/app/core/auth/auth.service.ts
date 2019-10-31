@@ -9,17 +9,16 @@ export class AuthService {
   constructor(private router: Router) { }
 
   isLogged(): boolean {
-    const isLogged: string = localStorage.getItem('isLogged');
-    return isLogged == 'true';
+    return true;
   }
 
   login(): void {
-    localStorage.setItem('isLogged', 'true');
+    console.log('Do stuff to log in');
     this.router.navigate(['']);
   }
 
   logout(): void {
-    localStorage.removeItem('isLogged');
+    console.log('Do stuff to log out');
     this.router.navigate(['login']);
   }
 

@@ -1,0 +1,38 @@
+@import "login.component.config";
+@import "../../../styles/mixins";
+@import "../../../styles/animations";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+
+  @include animated-gradient-background(adjust-hue($login-btn-text-color, 60deg), adjust-hue($login-btn-text-color, 30deg), adjust-hue($login-btn-text-color, -30deg), adjust-hue($login-btn-text-color, -60deg));
+}
+
+.login-btn {
+  width: 200px;
+  padding: 10px 30px;
+
+  border: 2px solid rgba(0, 0, 0, 0.12);
+  border-radius: 2rem;
+
+  background: rgba(0, 0, 0, 0.12);
+  color: lighten($login-btn-text-color, 20%);
+
+  font-size: 2rem;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  animation: hue-rotation-animation 15s infinite linear;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.05);
+  }
+}
+
+

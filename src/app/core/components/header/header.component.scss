@@ -57,6 +57,12 @@
 
     padding: 0 15px;
 
+    &__logout {
+      padding: 0 15px 0 0;
+
+      cursor: pointer;
+    }
+
     &__name {
       padding: 0 15px 0 0;
 

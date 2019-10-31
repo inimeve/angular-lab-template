@@ -1,0 +1,7 @@
+@import "animations";
+
+@mixin animated-gradient-background($color1, $color2, $color3, $color4) {
+  background: linear-gradient(-45deg, $color1, $color2, $color3, $color4);
+  background-size: 400% 400%;
+  animation: background-move-animation 15s ease infinite;
+}
