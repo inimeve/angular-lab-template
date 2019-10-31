@@ -7,6 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AllItemsComponent } from './all-items/all-items.component';
 import { SettingsComponent } from './settings/settings.component';
 import {CompLibModule} from '../comp-lib/comp-lib.module';
+import { CoreModule } from '../core/core.module';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import {CompLibModule} from '../comp-lib/comp-lib.module';
   imports: [
     CommonModule,
     PagesRoutingModule,
-    CompLibModule
+    CompLibModule,
+    CoreModule
   ]
 })
 export class PagesModule { }
