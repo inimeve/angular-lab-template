@@ -1,3 +1,8 @@
 <p>settings works!</p>
 
 {{config | json}}
+
+<div>
+  <h3>Auth state</h3>
+  {{authService.getAuthState() | async | json}}
+</div>
