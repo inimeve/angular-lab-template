@@ -15,13 +15,14 @@ import {StoreModule} from '@ngrx/store';
 import {metaReducers, reducers} from './state/core.state';
 import {EffectsModule} from '@ngrx/effects';
 import {AuthEffects} from './auth/state/auth.effects';
+import {ConfigEffects} from './config/state/config.effects';
 
 const MODULES = [
   AuthModule,
 
   // ngrx
   StoreModule.forRoot(reducers, {metaReducers}),
-  EffectsModule.forRoot([AuthEffects])
+  EffectsModule.forRoot([AuthEffects, ConfigEffects])
 ];
 
 const COMPONENTS = [

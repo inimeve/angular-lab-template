@@ -17,4 +17,8 @@ export class SettingsComponent implements OnInit {
     this.config = this.configService.getConfig();
   }
 
+  toggleSidebar(): void {
+    this.configService.toggleSidebarState();
+  }
+
 }

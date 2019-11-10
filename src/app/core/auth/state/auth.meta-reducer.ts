@@ -1,8 +1,7 @@
 import {ActionReducer, INIT, UPDATE} from '@ngrx/store';
-import {AppState} from '../../state/core.state';
 import {AuthState} from './auth.reducer';
 
-export function initAuthStateFromLocalStorage(reducer: ActionReducer<AppState>): ActionReducer<AppState> {
+export function initAuthStateFromLocalStorage(reducer: ActionReducer<AuthState>): ActionReducer<AuthState> {
   return (state, action) => {
     const newState = reducer(state, action);
 

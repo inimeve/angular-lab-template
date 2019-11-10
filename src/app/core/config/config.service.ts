@@ -1,8 +1,13 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {of} from 'rxjs';
+import {Observable, of} from 'rxjs';
 import {catchError} from 'rxjs/operators';
 import {SidebarService} from '../components/sidebar/sidebar.service';
+import {Store} from '@ngrx/store';
+import {AppState} from '../state/core.state';
+import {ConfigState} from './state/config.reducer';
+import {selectConfigState} from './state/config.selectors';
+import {configToggleSidebarState} from './state/config.actions';
 
 export function configServiceInitializerFactory(configService: ConfigService, sidebarService: SidebarService) {
   return () => configService.load()
@@ -23,7 +28,7 @@ export class ConfigService {
 
   private config: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private store: Store<AppState>) { }
 
   public getConfig(): any {
     return this.config;
@@ -48,5 +53,12 @@ export class ConfigService {
     }
   }
 
+  public getConfigState(): Observable<ConfigState> {
+    return this.store.select(selectConfigState);
+  }
+
+  public toggleSidebarState(): void {
+    this.store.dispatch(configToggleSidebarState());
+  }
 
 }
