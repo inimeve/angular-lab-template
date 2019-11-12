@@ -14,7 +14,9 @@ export const initialState: AuthState = {
 const reducer = createReducer(
   initialState,
 
-  on(authLogin, state => ({...state, isAuthenticated: true})),
+  on(authLogin, state => {
+    return {...state, isAuthenticated: true};
+  }),
 
   on(authLogout, state => {
     delete state.authData;

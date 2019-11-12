@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {ConfigService} from '../../core/config/config.service';
-import { AuthService } from 'src/app/core/auth/auth.service';
+import {Component, OnInit} from '@angular/core';
+import {AuthService} from 'src/app/core/auth/auth.service';
+import {SettingsService} from '../../core/settings/settings.service';
 
 @Component({
   selector: 'app-settings',
@@ -9,16 +9,15 @@ import { AuthService } from 'src/app/core/auth/auth.service';
 })
 export class SettingsComponent implements OnInit {
 
-  config: any;
-
-  constructor(private configService: ConfigService, private authService: AuthService) { }
+  constructor(
+    private settingsService: SettingsService,
+    private authService: AuthService) { }
 
   ngOnInit() {
-    this.config = this.configService.getConfig();
   }
 
   toggleSidebar(): void {
-    this.configService.toggleSidebarState();
+    this.settingsService.toggleSidebarState();
   }
 
 }

@@ -19,6 +19,8 @@ export class SidebarService {
       case SidebarState.STATE_EXPANDED:
         this.state$.next(SidebarState.STATE_EXPANDED);
         break;
+      default:
+        this.state$.next(SidebarState.STATE_EXPANDED);
     }
   }
 
